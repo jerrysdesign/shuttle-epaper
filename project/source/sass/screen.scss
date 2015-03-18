@@ -1,6 +1,227 @@
-/* Welcome to Compass.
- * In this file you should write your main styles. (or centralize your imports)
- * Import this file using the following HTML or equivalent:
- * <link href="/stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css" /> */
+@import "compass";
+
+// Variables
+$color-primary: #56cad6;
+$image-path: '../images';
+$header-height: 366px;
+$fontTC: Tahoma, Helvetica, Arial, 'Heiti TC', 'Microsoft JhengHei', "微軟正黑體", sans-serif;
+$color-text-section: #555;
+$color-heading: #465568;
+$offset: 40px;
+$offset-offset: 20px;
+
+// Mixin
+@mixin primary-color() {
+	background-color: $color-primary
+}
+@mixin ir() {
+	color: transparent;
+	font: 0/0 a;
+	text-shadow: none;
+	border: 0 none;
+	display: block;
+}
+
+/*
+ * Reset
+ * */
 
 @import "compass/reset";
+
+*, *:before, *:after {
+  @include box-sizing(border-box);
+}
+body {
+	font-family: $fontTC;
+}
+a {
+	text-decoration: none;
+}
+
+.container {
+	max-width: 780px;
+	margin: 0 auto;
+	position: relative;
+	@include pie-clearfix;
+}
+.header {
+	@include primary-color;
+	height: $header-height;
+	background-image: url('#{$image-path}/bg-header-icons.png');
+}
+.content {}
+.section {}
+.footer {
+	@include primary-color;
+	@include box-shadow (inset 0 1px rgba(0,0,0,.16));
+	background-image: url('#{$image-path}/bg-header-icons.png');
+}
+
+/*
+ * HEADER
+ */
+%bg-header {
+	background-position: center bottom;
+	background-repeat: repeat-x;
+}
+%bg-clouds {
+	@include box-sizing(content-box);
+	@extend %bg-header;
+	height: $header-height - $offset;
+	margin-bottom: $offset;
+}
+.left {
+	float: left;
+}
+.right {
+	float: right;
+}
+.tap-bar {
+	@extend %bg-header;
+	background-image: url('#{$image-path}/bg-top-bar.png');
+	height: image-height('#{$image-path}/bg-top-bar.png');
+}
+.bg-clouds-back {
+	@extend %bg-clouds;
+	background-image: url('#{$image-path}/bg-clouds-back.png');
+}
+.bg-clouds-front {
+	@extend %bg-clouds;
+	background-image: url('#{$image-path}/bg-clouds-front.png');
+	.container {
+		padding-top: 30px;
+	}
+}
+@mixin ir-img($image-name) {
+	height: image-height('#{$image-path}/#{$image-name}.png');
+	width: image-width('#{$image-path}/#{$image-name}.png');
+	background-image: image-url('#{$image-name}.png', false, false);
+	@include ir;
+}
+.shuttle-logo {
+	@include ir-img(shuttle-logo);
+	@extend .right;
+}
+.edupal-logo {
+	@include ir-img(edupal-logo);
+}
+.contact-top {
+	background: url('#{$image-path}/icon-envelope.png') no-repeat 5px center;
+	color: #fff;
+	font-size: 12px;
+	display: block;
+	.container & {
+		margin-top: -20px;
+		padding: 15px 30px 10px;
+	}
+}
+.left-col {
+	@extend .left;
+}
+%big-font {
+	font-size: 18px;
+	color: $color-heading;
+}
+%section {
+	font-size: 12px;
+	line-height: 1.5;
+	color: $color-text-section;
+	padding: 30px 0;
+	.content & {	
+		@include pie-clearfix;
+	}
+}
+.section-odd {
+	@extend %section;
+}
+.section-even {
+	background-color: #f2f2f2;
+	@extend %section;
+	@include box-shadow (inset 0 1px rgba(0,0,0,.06));
+}
+.heading {
+	@extend %big-font;
+	padding-bottom: 10px;
+	margin-bottom: 30px;
+	background: url('#{$image-path}/bg-heading-underline.png') repeat-x bottom;
+}
+.img {
+	padding-bottom: 10px;
+	.section-odd & {
+		padding-right: 20px;
+	}
+	.section-even & {
+		padding-left: 20px;
+	}
+}
+.nav-wrapper {
+	background: #fff;
+	margin-top: ($offset * -1) - 20;
+	@include pie-clearfix;
+}
+.nav {
+	margin-bottom: $offset-offset;
+	@extend .right;
+	@include pie-clearfix;
+}
+.nav-list {
+	padding: $offset-offset;
+	// padding-bottom: 5px;
+	@extend %big-font;
+}
+%item {
+	border-top: 4px solid;
+	@extend .left;
+	> a {
+		display: block;
+		text-decoration: none;
+		color: $color-heading;
+	}
+}
+.item-01 {
+	@extend %item;
+	border-color: #deebee;
+}
+.item-02 {
+	@extend %item;
+	border-color: #ffebc7;
+	
+}
+.item-03 {
+	@extend %item;
+	border-color: #fae0e0;
+}
+.contact {
+	padding: 60px 0;
+}
+.contact-heading {
+	font-size: 24px;
+	@include text-shadow (0 1px rgba(0,0,0,.12));
+	color: #fff;
+	margin-bottom: 10px;
+	padding-left: 48px;
+	background: url('#{$image-path}/icon-mail.png') no-repeat left center;
+	+ p {
+		@include text-shadow (0 1px rgba(0,0,0,.12));
+		color: #fff;
+		margin-bottom: 10px;
+	}
+}
+.under-bar {
+	background-color: #484848;
+	@include box-shadow (inset 0 1px rgba(0,0,0,.25));
+	padding: 20px 0;
+}
+.list-item {
+	font-size: 12px;
+	display: inline-block;
+	padding-right: 20px;
+	color: #ababab;
+	+ .list-item  {
+		border-left: 1px solid #ababab;
+		padding-left: 20px;
+	}
+	a {
+		color: #ffebc7;
+	}
+}

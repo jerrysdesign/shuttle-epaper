@@ -11,12 +11,59 @@ html lang="zh-TW"
 		meta content= data["site-description"] property="og:description"
 		meta content= data["og-type"] property="og:type"
 		meta content= data["fb-admins"] property="fb:admins"
-		== stylesheet_link_tag "screen"
+		link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"
 		/[if IE]
 			== stylesheet_link_tag "ie"
 		/[if lt IE 9]
 			== javascript_include_tag "//html5shim.googlecode.com/svn/trunk/html5.js"
 	body
+		.header
+			.tap-bar
+			.bg-clouds-back
+				.bg-clouds-front
+					.container
+						.shuttle-logo.right SHUTTLE
+						.left-col
+							a.contact-top href='mailto:EDUPAL@tw.shuttle.com' EDUPAL@tw.shuttle.com
+							.edupal-logo EDUPAL
+			.nav-wrapper
+				.container
+					ul.nav
+						li.nav-list.item-01: a href='#SECTION-01' =zh_lorem_words 5
+						li.nav-list.item-02: a href='#SECTION-02' =zh_lorem_words 5
+						li.nav-list.item-03: a href='#SECTION-03' =zh_lorem_words 5
+		.content
+			#SECTION-01.section-odd
+				.container
+					h1.heading =zh_lorem_sentence 
+					.content
+						img.img.left src='http://lorempixel.com/300/200/business/1'
+						= zh_lorem_paragraphs 5
+			#SECTION-02.section-even
+				.container
+					h1.heading =zh_lorem_sentence
+					.content
+						img.img.right src='http://lorempixel.com/300/200/business/2'
+						= zh_lorem_paragraphs 10
+			#SECTION-03.section-odd
+				.container
+					h1.heading =zh_lorem_sentence
+					.content
+						img.img.left src='http://lorempixel.com/300/200/business/3'
+						= zh_lorem_paragraphs 15
+		.footer
+			.contact
+				.container
+					h3.contact-heading 取得聯繫!
+					p 如果您對以上內容感興趣，想更進一步了解我們的產品，可以透過以下電子郵件與我們聯繫！
+					a href='EDUPAL@tw.shuttle.com' EDUPAL@tw.shuttle.com
+			.under-bar
+				.container
+					ul.list-nav
+						li.list-item COPYRIGHT © 2015 SHUTTLE INC. ALL RIGHTS RESERVED
+						li.list-item: a href='mailto:EDUPAL@tw.shuttle.com' CONTACT US
+						li.list-item January, 2015
+						li.list-item 第 99 期
 		== javascript_include_tag \
 		"//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", \
 		"all"
