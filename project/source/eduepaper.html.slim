@@ -12,10 +12,10 @@ html lang="zh-TW"
 		meta content= data["og-type"] property="og:type"
 		meta content= data["fb-admins"] property="fb:admins"
 		link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"
-		/[if IE]
-			== stylesheet_link_tag "ie"
-		/[if lt IE 9]
-			== javascript_include_tag "//html5shim.googlecode.com/svn/trunk/html5.js"
+		/ /[if IE]
+		/ 	== stylesheet_link_tag "ie"
+		/ /[if lt IE 9]
+		/ 	== javascript_include_tag "//html5shim.googlecode.com/svn/trunk/html5.js"
 	body
 		.header
 			.tap-bar
@@ -64,7 +64,7 @@ html lang="zh-TW"
 						li.list-item: a href='mailto:EDUPAL@tw.shuttle.com' CONTACT US
 						li.list-item January, 2015
 						li.list-item 第 99 期
-		== javascript_include_tag \
-		"//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", \
-		"all"
-		== livereload_js unless ENV["RACK_ENV"] == "production"
+		/ == javascript_include_tag \
+		/ "//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", \
+		/ "all"
+		/ == livereload_js unless ENV["RACK_ENV"] == "production"

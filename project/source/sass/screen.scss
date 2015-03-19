@@ -9,6 +9,10 @@ $color-text-section: #555;
 $color-heading: #465568;
 $offset: 40px;
 $offset-offset: 20px;
+$color-nav-item01: #deebee;
+$color-nav-item02: #ffebc7;
+$color-nav-item03: #fae0e0;
+
 
 // Mixin
 @mixin primary-color() {
@@ -21,13 +25,24 @@ $offset-offset: 20px;
 	border: 0 none;
 	display: block;
 }
+@mixin ir-img($image-name) {
+	height: image-height('#{$image-path}/#{$image-name}.png');
+	width: image-width('#{$image-path}/#{$image-name}.png');
+	background-image: image-url('#{$image-name}.png', false, false);
+	@include ir;
+}
+
+
 
 /*
  * Reset
  * */
-
 @import "compass/reset";
 
+
+/*
+ * Global
+ * */
 *, *:before, *:after {
   @include box-sizing(border-box);
 }
@@ -38,6 +53,9 @@ a {
 	text-decoration: none;
 }
 
+/*
+ * Layout
+ * */
 .container {
 	max-width: 780px;
 	margin: 0 auto;
@@ -92,12 +110,6 @@ a {
 		padding-top: 30px;
 	}
 }
-@mixin ir-img($image-name) {
-	height: image-height('#{$image-path}/#{$image-name}.png');
-	width: image-width('#{$image-path}/#{$image-name}.png');
-	background-image: image-url('#{$image-name}.png', false, false);
-	@include ir;
-}
 .shuttle-logo {
 	@include ir-img(shuttle-logo);
 	@extend .right;
@@ -118,6 +130,41 @@ a {
 .left-col {
 	@extend .left;
 }
+.nav-wrapper {
+	background: #fff;
+	margin-top: ($offset * -1) - 20;
+	@include pie-clearfix;
+}
+.nav {
+	margin-bottom: $offset-offset;
+	@extend .right;
+	@include pie-clearfix;
+}
+.nav-list {
+	padding: $offset-offset;
+	@extend %big-font;
+}
+%item {
+	border-top: 4px solid;
+	@extend .left;
+	> a {
+		display: block;
+		text-decoration: none;
+		color: $color-heading;
+	}
+}
+.item-01 {
+	@extend %item;
+	border-color: $color-nav-item01;
+}
+.item-02 {
+	@extend %item;
+	border-color: $color-nav-item02;
+}
+.item-03 {
+	@extend %item;
+	border-color: $color-nav-item03;
+}
 %big-font {
 	font-size: 18px;
 	color: $color-heading;
@@ -131,6 +178,11 @@ a {
 		@include pie-clearfix;
 	}
 }
+
+
+/*
+ * Content
+ */
 .section-odd {
 	@extend %section;
 }
@@ -154,45 +206,16 @@ a {
 		padding-left: 20px;
 	}
 }
-.nav-wrapper {
-	background: #fff;
-	margin-top: ($offset * -1) - 20;
-	@include pie-clearfix;
-}
-.nav {
-	margin-bottom: $offset-offset;
-	@extend .right;
-	@include pie-clearfix;
-}
-.nav-list {
-	padding: $offset-offset;
-	// padding-bottom: 5px;
-	@extend %big-font;
-}
-%item {
-	border-top: 4px solid;
-	@extend .left;
-	> a {
-		display: block;
-		text-decoration: none;
-		color: $color-heading;
-	}
-}
-.item-01 {
-	@extend %item;
-	border-color: #deebee;
-}
-.item-02 {
-	@extend %item;
-	border-color: #ffebc7;
-	
-}
-.item-03 {
-	@extend %item;
-	border-color: #fae0e0;
-}
+
+
+/*
+ * Content
+ */
 .contact {
 	padding: 60px 0;
+	a {
+		color: #fff;
+	}
 }
 .contact-heading {
 	font-size: 24px;
@@ -214,7 +237,7 @@ a {
 }
 .list-item {
 	font-size: 12px;
-	display: inline-block;
+	@extend .left;
 	padding-right: 20px;
 	color: #ababab;
 	+ .list-item  {
