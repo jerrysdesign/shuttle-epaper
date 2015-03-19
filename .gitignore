@@ -1,0 +1,6 @@
+.DS_Store
+.scssc
+.sass-cache
+project/source/css/
+project/source/.coffeescript-cache/**/*
+project/source/fire_app_log.txt
