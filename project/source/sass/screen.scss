@@ -12,7 +12,13 @@ $offset-offset: 20px;
 $color-nav-item01: #deebee;
 $color-nav-item02: #ffebc7;
 $color-nav-item03: #fae0e0;
-
+$size-font-base: 13;
+$size-font-x-small: ($size-font-base - 2) * 1px;
+$size-font-small: ($size-font-base - 1) * 1px;
+$size-font-medium: $size-font-base * 1px;
+$size-font-large: ($size-font-base + 1) * 1px;
+$size-font-x-large: ($size-font-base + 3) * 1px;
+$size-font-xx-large: ($size-font-base + 5) * 1px;
 
 // Mixin
 @mixin primary-color() {
@@ -156,7 +162,7 @@ a {
 .contact-top {
 	background: url('#{$image-path}/icon-envelope.png') no-repeat 5px center;
 	color: #fff;
-	font-size: 13px;
+	font-size: $size-font-medium;
 	display: block;
 	.container & {
 		margin-top: -20px;
@@ -211,11 +217,11 @@ a {
 	}
 }
 %big-font {
-	font-size: 18px;
+	font-size: $size-font-xx-large;
 	color: $color-heading;
 }
 %section {
-	font-size: 13px;
+	font-size: $size-font-medium;
 	line-height: 1.5;
 	color: $color-text-section;
 	padding: 30px 0;
@@ -250,7 +256,7 @@ a {
 	margin-bottom: 30px;
 	background: url('#{$image-path}/bg-heading-underline.png') repeat-x bottom;
 }
-.img {
+.left, .right {
 	padding-bottom: 10px;
 	.section-odd & {
 		padding-right: 20px;
@@ -289,7 +295,7 @@ a {
 	padding: 20px 0;
 }
 .list-item {
-	font-size: 12px;
+	font-size: $size-font-small;
 	@extend .left;
 	padding-right: 20px;
 	color: #ababab;
@@ -300,4 +306,12 @@ a {
 	a {
 		color: #ffebc7;
 	}
+}
+
+.img-note {
+	background-color: #8cc13f;
+	color: #fff;
+	font-size: $size-font-x-small;
+	padding: 5px;
+	margin-top: -5px;
 }
