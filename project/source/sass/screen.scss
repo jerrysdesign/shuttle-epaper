@@ -9,13 +9,13 @@ $color-text-section: #555;
 $color-heading: #465568;
 $offset: 40px;
 $offset-offset: 20px;
-$size-font-base: 13;
 $color-1: #3ac0f0;
 $color-2: #faae6c;
 $color-3: #ed706e;
 $color-nav-item01: lighten($color-1, 33%);
 $color-nav-item02: lighten($color-2, 20%);
 $color-nav-item03: lighten($color-3, 25%);
+$size-font-base: 15;
 $size-font-x-small: ($size-font-base - 2) * 1px;
 $size-font-small: ($size-font-base - 1) * 1px;
 $size-font-medium: $size-font-base * 1px;
@@ -226,15 +226,6 @@ a {
 	font-size: $size-font-xx-large;
 	color: $color-heading;
 }
-%section {
-	font-size: $size-font-medium;
-	line-height: 1.5;
-	color: $color-text-section;
-	padding: 30px 0;
-	.content & {	
-		@include pie-clearfix;
-	}
-}
 .no {
 	background-color: #8cc13f;
 	color: #fff;
@@ -248,6 +239,16 @@ a {
 /*
  * CONTENT
  */
+%section {
+	font-size: $size-font-medium;
+	line-height: 1.5;
+	color: $color-text-section;
+	padding: 30px 0;
+	.content & {	
+		@include pie-clearfix;
+		position: relative;
+	}
+}
 .section-odd {
 	@extend %section;
 }
@@ -370,7 +371,7 @@ a {
 	padding: 20px 0;
 }
 .list-item {
-	font-size: $size-font-small;
+	font-size: $size-font-medium;
 	@extend .left;
 	padding-right: 20px;
 	color: #ababab;

@@ -2,5 +2,6 @@
 .scssc
 .sass-cache
 project/source/stylesheets/
+project/source/javascripts/
 project/source/.coffeescript-cache/**/*
 project/source/fire_app_log.txt
