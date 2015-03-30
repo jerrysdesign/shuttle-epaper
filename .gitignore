@@ -4,3 +4,4 @@
 project/source/stylesheets/
 project/source/.coffeescript-cache/**/*
 project/source/fire_app_log.txt
+all.js
