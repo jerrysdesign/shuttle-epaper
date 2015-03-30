@@ -9,16 +9,21 @@ $color-text-section: #555;
 $color-heading: #465568;
 $offset: 40px;
 $offset-offset: 20px;
-$color-nav-item01: #deebee;
-$color-nav-item02: #ffebc7;
-$color-nav-item03: #fae0e0;
 $size-font-base: 13;
+$color-1: #3ac0f0;
+$color-2: #faae6c;
+$color-3: #ed706e;
+$color-nav-item01: lighten($color-1, 33%);
+$color-nav-item02: lighten($color-2, 20%);
+$color-nav-item03: lighten($color-3, 25%);
 $size-font-x-small: ($size-font-base - 2) * 1px;
 $size-font-small: ($size-font-base - 1) * 1px;
 $size-font-medium: $size-font-base * 1px;
 $size-font-large: ($size-font-base + 1) * 1px;
 $size-font-x-large: ($size-font-base + 3) * 1px;
 $size-font-xx-large: ($size-font-base + 5) * 1px;
+$section-icon-size: 92px;
+
 
 // Mixin
 @mixin primary-color() {
@@ -42,13 +47,13 @@ $size-font-xx-large: ($size-font-base + 5) * 1px;
 
 /*
  * Reset
- * */
+ */
 @import "compass/reset";
 
 
 /*
  * Global
- * */
+ */
 *, *:before, *:after {
   @include box-sizing(border-box);
 }
@@ -97,7 +102,7 @@ a {
 }
 /*
  * Layout
- * */
+ */
 .container {
 	max-width: 780px;
 	margin: 0 auto;
@@ -116,6 +121,7 @@ a {
 	@include box-shadow (inset 0 1px rgba(0,0,0,.16));
 	background-image: url('#{$image-path}/bg-header-icons.png');
 }
+
 
 /*
  * HEADER
@@ -199,21 +205,21 @@ a {
 	@extend %item;
 	border-color: $color-nav-item01;
 	&:hover {
-		background-color: $color-nav-item01;
+		background-color: $color-1;
 	}
 }
 .item-02 {
 	@extend %item;
 	border-color: $color-nav-item02;
 	&:hover {
-		background-color: $color-nav-item02;
+		background-color: $color-2;
 	}
 }
 .item-03 {
 	@extend %item;
 	border-color: $color-nav-item03;
 	&:hover {
-		background-color: $color-nav-item03;
+		background-color: $color-3;
 	}
 }
 %big-font {
@@ -240,7 +246,7 @@ a {
 
 
 /*
- * Content
+ * CONTENT
  */
 .section-odd {
 	@extend %section;
@@ -250,11 +256,52 @@ a {
 	@extend %section;
 	@include box-shadow (inset 0 1px rgba(0,0,0,.06));
 }
+.section-title {
+	font-size: $size-font-xx-large;
+	height: $section-icon-size;
+	// margin-left:  $section-icon-size * -1;
+	vertical-align: top;
+	position: absolute;
+	right: 0;
+	top: ($section-icon-size/3) * -2;
+}
+.section__title-icon {
+	position: relative;
+	float: left;
+	z-index: 1;
+	#SECTION-01 & {
+		@include ir-img(icon-event);
+	}
+	#SECTION-02 & {
+		@include ir-img(icon-education);
+	}
+	#SECTION-03 & {
+		@include ir-img(icon-book-recommend);
+	}
+}
+.section__title {
+	float: left;
+	padding-right: 20px;
+	padding-left: ($section-icon-size/2) + 10;
+	line-height: ($section-icon-size/3)*2;
+	background-color: #fff;
+	margin-left: ($section-icon-size/2) * -1;
+	margin-top: ($section-icon-size/3) / 2;
+	@include border-radius (6px);
+	@include box-shadow (0 1px 3px rgba(0,0,0,.11));
+	z-index: 0;
+	#SECTION-01 & { color: $color-1;}
+	#SECTION-02 & { color: $color-2;}
+	#SECTION-03 & { color: $color-3;}
+}
 .heading {
 	@extend %big-font;
 	padding-bottom: 10px;
 	margin-bottom: 30px;
 	background: url('#{$image-path}/bg-heading-underline.png') repeat-x bottom;
+	#SECTION-01 & { color: $color-1;}
+	#SECTION-02 & { color: $color-2;}
+	#SECTION-03 & { color: $color-3;}
 }
 .left, .right {
 	padding-bottom: 10px;
@@ -265,10 +312,38 @@ a {
 		padding-left: 20px;
 	}
 }
-
-
+.img {
+	display: block;
+	padding: 10px;
+	background-color: #E7E7E7;
+}
+.img-note {
+	background-color: #8cc13f;
+	color: #fff;
+	font-size: $size-font-x-small;
+	padding: 5px;
+}
+.btn {
+  @include border-radius(2px);
+  @include box-shadow(1.638px 1.147px 1px 0px rgba( 0, 0, 0, .1));
+  display: block;
+  text-align: center;
+  vertical-align: middle;
+  padding: 5px 20px;
+  font-size: $size-font-large;
+  color: #fff;
+}
+.btn-blue {
+	background-color: $color-1;
+}
+.btn-orange {
+	background-color: $color-2;
+}
+.btn-red {
+	background-color: $color-3;
+}
 /*
- * Content
+ * FOOTER
  */
 .contact {
 	padding: 60px 0;
@@ -308,10 +383,13 @@ a {
 	}
 }
 
-.img-note {
-	background-color: #8cc13f;
-	color: #fff;
-	font-size: $size-font-x-small;
-	padding: 5px;
-	margin-top: -5px;
+/*
+ * JS hock
+ */
+.morecontent {
+  display: none;
+}
+.morelink {
+  display: block;
+  cursor: pointer;
 }
