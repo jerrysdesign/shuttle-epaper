@@ -348,6 +348,18 @@ a {
 .btn-red {
 	background-color: $color-3;
 }
+.heyper-link {
+	text-align: center;
+	a {
+		color: $color-3;
+		&:hover {
+			color: darken($color-3, 35%);
+		}
+	}
+	ul, li {
+
+	}
+}
 /*
  * FOOTER
  */
