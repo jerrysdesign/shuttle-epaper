@@ -11,7 +11,7 @@ html lang="zh-TW"
 		meta content= data["site-description"] property="og:description"
 		meta content= data["og-type"] property="og:type"
 		meta content= data["fb-admins"] property="fb:admins"
-		link href="stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"
+		link href="./stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"
 		/ /[if IE]
 		/ 	== stylesheet_link_tag "ie"
 		/ /[if lt IE 9]
@@ -166,6 +166,6 @@ html lang="zh-TW"
 						li.list-item April, 2015
 						li.list-item 第 036 期
 		== javascript_include_tag \
-		"//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js", \
-		"all"
+		"//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"
+		script type='text/javascript' src='./javascripts/all.js'
 		/ == livereload_js unless ENV["RACK_ENV"] == "production"

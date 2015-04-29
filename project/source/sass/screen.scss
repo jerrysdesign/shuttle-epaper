@@ -39,7 +39,8 @@ $section-icon-size: 92px;
 @mixin ir-img($image-name) {
 	height: image-height('#{$image-path}/#{$image-name}.png');
 	width: image-width('#{$image-path}/#{$image-name}.png');
-	background-image: image-url('#{$image-name}.png', false, false);
+	// background-image: url('#{$image-path}/bg-clouds-back.png');
+	background-image: url('#{$image-path}/#{$image-name}.png');
 	@include ir;
 }
 
