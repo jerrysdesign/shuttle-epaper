@@ -70,6 +70,7 @@ a {
 	}
 	img {
 		max-width: 100%;
+		max-width: 420px;
 	}
 	p {
 		margin-bottom: 1em;
@@ -241,7 +242,7 @@ a {
  */
 %section {
 	font-size: $size-font-medium;
-	line-height: 1.5;
+	line-height: 1.6;
 	color: $color-text-section;
 	padding: 30px 0;
 	.content & {	
@@ -323,6 +324,9 @@ a {
 	color: #fff;
 	font-size: $size-font-x-small;
 	padding: 5px;
+	#SECTION-03 & {
+		background-color: $color-3;
+	}
 }
 .btn {
   @include border-radius(2px);
