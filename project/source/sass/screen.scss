@@ -191,36 +191,39 @@ a {
 	@include pie-clearfix;
 }
 .nav-list {
-	padding: $offset-offset;
 	@extend %big-font;
 }
 %item {
 	border-top: 4px solid;
 	@extend .left;
 	> a {
+		padding: $offset-offset;
 		display: block;
 		text-decoration: none;
 		color: $color-heading;
+		&:hover {
+			color: white;
+		}
 	}
 }
 .item-01 {
 	@extend %item;
 	border-color: $color-nav-item01;
-	&:hover {
+	a:hover {
 		background-color: $color-1;
 	}
 }
 .item-02 {
 	@extend %item;
 	border-color: $color-nav-item02;
-	&:hover {
+	a:hover {
 		background-color: $color-2;
 	}
 }
 .item-03 {
 	@extend %item;
 	border-color: $color-nav-item03;
-	&:hover {
+	a:hover {
 		background-color: $color-3;
 	}
 }
