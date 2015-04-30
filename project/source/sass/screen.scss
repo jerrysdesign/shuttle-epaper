@@ -1,6 +1,17 @@
+$legacy-support-for-ie: false;
 @import "compass";
+@import "susy";
 
 // Variables
+$total-columns  : 8; // 預設 5 欄
+$column-width   : 5.125em;
+$gutter-width   : 1em;
+$grid-padding   : 0;
+
+// add media
+$ipad           : 48em 8;  // min-width 641px 寬度超過 641px 後的欄位數量
+$desktop        : 64em 12; // min-width 779 寬度超過 779px 後的欄位數量
+
 $color-primary: #56cad6;
 $image-path: '../images';
 $header-height: 366px;
@@ -56,22 +67,33 @@ $section-icon-size: 92px;
  * Global
  */
 *, *:before, *:after {
-  @include box-sizing(border-box);
+	@include box-sizing(border-box);
 }
 body {
 	font-family: $fontTC;
+	text-align: center;
 }
 a {
 	text-decoration: none;
 }
-
+.container {
+	@include container($total-columns, $ipad, $desktop);
+	@include pie-clearfix;
+}
+.content, .footer {
+	.container {
+		position: relative;
+		$grid-padding: 1em;
+		@include container($total-columns, $ipad, $desktop);
+		@include pie-clearfix;
+	}
+}
 .section-even, .section-odd {
 	b {
 		font-weight: bold;
 	}
 	img {
-		max-width: 100%;
-		max-width: 420px;
+		width: 100%;
 	}
 	p {
 		margin-bottom: 1em;
@@ -102,29 +124,37 @@ a {
 		}
 	}
 }
+.section-title {
+	font-size: $size-font-xx-large;
+	height: $section-icon-size;
+	// vertical-align: top;
+	position: relative;
+	display: inline-block;
+	margin: 0 auto;
+}
 /*
  * Layout
  */
-.container {
-	width: 780px;
-	margin: 0 auto;
-	position: relative;
-	@include pie-clearfix;
+@include at-breakpoint($ipad) {
+	.left {
+		float: left;
+	}
+	.right {
+		float: right;
+	}
 }
 .header {
 	@include primary-color;
 	height: $header-height;
 	background-image: url('#{$image-path}/bg-header-icons.png');
 }
-.content {}
-.section {}
-.footer {
+.section {
+}
+.footer {	
 	@include primary-color;
 	@include box-shadow (inset 0 1px rgba(0,0,0,.16));
 	background-image: url('#{$image-path}/bg-header-icons.png');
 }
-
-
 /*
  * HEADER
  */
@@ -133,16 +163,14 @@ a {
 	background-repeat: repeat-x;
 }
 %bg-clouds {
-	@include box-sizing(content-box);
 	@extend %bg-header;
-	height: $header-height - $offset;
-	margin-bottom: $offset;
-}
-.left {
-	float: left;
-}
-.right {
-	float: right;
+	height: $header-height;
+	bottom: 0;
+	@include at-breakpoint($ipad) {
+		@include box-sizing(content-box);
+		height: $header-height - $offset;
+		margin-bottom: $offset;
+	}
 }
 .tap-bar {
 	@extend %bg-header;
@@ -150,40 +178,77 @@ a {
 	height: image-height('#{$image-path}/bg-top-bar.png');
 }
 .bg-clouds-back {
+	position: relative;
+	
 	@extend %bg-clouds;
 	background-image: url('#{$image-path}/bg-clouds-back.png');
 }
 .bg-clouds-front {
+	position: absolute;
+	width: 100%;
 	@extend %bg-clouds;
 	background-image: url('#{$image-path}/bg-clouds-front.png');
 	.container {
-		padding-top: 30px;
+		@include at-breakpoint($ipad) {
+			padding-top: 50px;
+		}
+	}
+}
+.shuttle-logo-wrapper {
+	padding: 5px 0 2px 0;
+	background-color: white;
+	margin-bottom: 10px;
+	@include at-breakpoint($ipad) {
+		@include reset-box-model;
+		background-color: transparent;
 	}
 }
 .shuttle-logo {
 	@include ir-img(shuttle-logo);
-	@extend .right;
+	margin: 10px auto;
+	@include at-breakpoint($ipad) {
+		float: right;
+	}
 }
-.edupal-logo {
-	@include ir-img(edupal-logo);
+.logo-groups {
+	width: 308px;
+	margin: 0 auto;
+	@include pie-clearfix;
+	@include at-breakpoint($ipad) {
+		float: left;
+	}
 }
-.contact-top {
-	background: url('#{$image-path}/icon-envelope.png') no-repeat 5px center;
+.email {
+	background: url('#{$image-path}/icon-envelope.png') no-repeat;
 	color: #fff;
 	font-size: $size-font-medium;
 	display: block;
-	.container & {
-		margin-top: -20px;
-		padding: 15px 30px 10px;
-	}
+	text-align: left;
+	padding-left: 25px;
+	margin-left: 4px;
+	margin-bottom: 10px;
+	// margin-top: -20px;
+	// @include at-breakpoint($ipad) {
+	// 	@extend .right;
+	// }
+	// padding: 15px 30px 10px;
+}
+.edupal-logo {
+	@include ir-img(edupal-logo);
 }
 .left-col {
 	@extend .left;
 }
 .nav-wrapper {
-	background: #fff;
-	margin-top: ($offset * -1) - 20;
-	@include pie-clearfix;
+	display: none;
+	@include at-breakpoint($ipad) {
+		display: block;
+		background: #fff;
+		margin-top: ($offset * -1) - 40;
+		@include pie-clearfix;
+		z-index: 1;
+		position: relative;
+	}
 }
 .nav {
 	margin-bottom: $offset-offset;
@@ -239,8 +304,6 @@ a {
 	padding: 10px;
 	float: left;
 }
-
-
 /*
  * CONTENT
  */
@@ -262,15 +325,7 @@ a {
 	@extend %section;
 	@include box-shadow (inset 0 1px rgba(0,0,0,.06));
 }
-.section-title {
-	font-size: $size-font-xx-large;
-	height: $section-icon-size;
-	// margin-left:  $section-icon-size * -1;
-	vertical-align: top;
-	position: absolute;
-	right: 0;
-	top: ($section-icon-size/3) * -2;
-}
+
 .section__title-icon {
 	position: relative;
 	float: left;
@@ -309,13 +364,15 @@ a {
 	#SECTION-02 & { color: $color-2;}
 	#SECTION-03 & { color: $color-3;}
 }
-.left, .right {
-	padding-bottom: 10px;
-	.section-odd & {
-		padding-right: 20px;
-	}
-	.section-even & {
-		padding-left: 20px;
+@include at-breakpoint($ipad) {
+	.left, .right {
+		padding-bottom: 10px;
+		.section-odd & {
+			padding-right: 20px;
+		}
+		.section-even & {
+			padding-left: 20px;
+		}
 	}
 }
 .img {
@@ -333,14 +390,14 @@ a {
 	}
 }
 .btn {
-  @include border-radius(2px);
-  @include box-shadow(1.638px 1.147px 1px 0px rgba( 0, 0, 0, .1));
-  display: block;
-  text-align: center;
-  vertical-align: middle;
-  padding: 5px 20px;
-  font-size: $size-font-large;
-  color: #fff;
+	@include border-radius(2px);
+	@include box-shadow(1.638px 1.147px 1px 0px rgba( 0, 0, 0, .1));
+	display: block;
+	text-align: center;
+	vertical-align: middle;
+	padding: 5px 20px;
+	font-size: $size-font-large;
+	color: #fff;
 }
 .btn-blue {
 	background-color: $color-1;
@@ -379,6 +436,7 @@ a {
 	margin-bottom: 10px;
 	padding-left: 48px;
 	background: url('#{$image-path}/icon-mail.png') no-repeat left center;
+	display: inline-block;
 	+ p {
 		@include text-shadow (0 1px rgba(0,0,0,.12));
 		color: #fff;
@@ -391,16 +449,19 @@ a {
 	padding: 20px 0;
 }
 .list-item {
-	font-size: $size-font-medium;
-	@extend .left;
-	padding-right: 20px;
+	font-size: $size-font-small;
 	color: #ababab;
-	+ .list-item  {
-		border-left: 1px solid #ababab;
-		padding-left: 20px;
-	}
 	a {
 		color: #ffebc7;
+	}
+	margin-bottom: 5px;
+	@include at-breakpoint($ipad) {
+		@extend .left;
+		padding-right: 20px;
+		+ .list-item  {
+			border-left: 1px solid #ababab;
+			padding-left: 20px;
+		}
 	}
 }
 
@@ -408,9 +469,41 @@ a {
  * JS hock
  */
 .morecontent {
-  display: none;
+	display: none;
 }
 .morelink {
-  display: block;
-  cursor: pointer;
+	display: block;
+	cursor: pointer;
+	@include at-breakpoint($ipad) {
+		float: left;
+	}
+}
+@include at-breakpoint($ipad) {
+	body {
+		text-align: left;
+	}
+	img {
+		max-width: 100%;
+		max-width: 420px;
+	}
+	.section-title {
+		font-size: $size-font-xx-large;
+		height: $section-icon-size;
+		margin-left:  $section-icon-size * -1;
+		vertical-align: top;
+		position: absolute;
+		right: 0;
+		top: ($section-icon-size/3) * -2;
+	}
+}
+
+@include at-breakpoint($desktop) {
+	.container {
+		width: 780px;
+	}
+	.content, .footer {
+		.container {
+			width: 780px;
+		}
+	}
 }
