@@ -106,7 +106,7 @@ a {
  * Layout
  */
 .container {
-	max-width: 780px;
+	width: 780px;
 	margin: 0 auto;
 	position: relative;
 	@include pie-clearfix;
