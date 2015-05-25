@@ -68,6 +68,8 @@ html lang="zh-TW"
 						span.section__title 好書報報
 					h2.heading 會走路的山
 					.content
+						.left
+							img.img src='images/assets/038/038-section-02-01.jpg'
 						table
 							tr
 								td style="width: 85px"
@@ -92,7 +94,7 @@ html lang="zh-TW"
 						.morecontent
 							table
 								tr
-									td
+									td style="width: 85px"
 										b 推薦序：
 									td
 										h4 會走路的山∕林素華 國立臺中教育大學環境教育研究所副教授兼任所長
@@ -116,7 +118,7 @@ html lang="zh-TW"
 										ul
 											li 第60梯次好書大家讀
 											li 行政院新聞局第34屆中小學生優良課外讀物推介
-						a.btn.btn-orange.morelink href='javascript:;' 詳全文
+						a.btn.btn-orange.morelink.right href='javascript:;' 詳全文
 			#SECTION-03.section-even
 				.container
 					h1.section-title
@@ -158,4 +160,4 @@ html lang="zh-TW"
 
 			ga('create', 'UA-60618112-1', 'auto');
 			ga('send', 'pageview');
-		== livereload_js unless ENV["RACK_ENV"] == "production"
+		/ == livereload_js unless ENV["RACK_ENV"] == "production"
