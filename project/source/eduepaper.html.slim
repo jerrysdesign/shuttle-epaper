@@ -2,20 +2,21 @@
 - mail = 'EDUPAL@tw.shuttle.com'
 - absolutpath = 'http://edupal.tw.shuttle.com/ebook_web/'
 - copyright = 'COPYRIGHT © 2015 SHUTTLE INC. ALL RIGHTS RESERVED'
-- assetspath = '/'
-- httpspath = '//'
+/ - assetspath = '/'
+/ - httpspath = '//'
 / dev
-/ 	assetspath = ''
-/ 	assetspath = 'https://'
+- assetspath = ''
+- httpspath = 'https://'
 
 // content
--site_no					= '38'
+-site_no					= '39'
 -this_date				= 'July, 2015'
--nav_title_1			= '活動報導'
--heading_title_1 	= '活動報導 台北市103學年度國民中小學校長科技領導研習'
--img_note_1				= ''
+
+-nav_title_1			= '活動報導 '
+-heading_title_1 	= '2015 年台北國際電腦展(Computex 2015)圓滿落幕'
+-img_note_1				= '015年台北國際電腦展浩鑫展出EDUPAL®智慧教育整合方案'
 -nav_title_2			= '好書報報'
--heading_title_2	= '會走路的山'
+-heading_title_2	= '林良爺爺憶兒時'
 -img_note_2				= ''
 -nav_title_3			= '教育一點靈'
 -heading_title_3	= ''
@@ -35,7 +36,7 @@ html lang="zh-TW"
 		meta content= data["site-description"] property="og:description"
 		meta content= data["og-type"] property="og:type"
 		meta content= data["fb-admins"] property="fb:admins"
-		link href="./stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"
+		link href="#{assetspath}stylesheets/screen.css" media="screen, projection" rel="stylesheet" type="text/css"
 		/ /[if IE]
 		/ 	== stylesheet_link_tag "ie"
 		/ /[if lt IE 9]
@@ -70,7 +71,7 @@ html lang="zh-TW"
 						p style="color: #8cc13f; font-size: 15px;"
 							| 104年第一次電腦軟體共同供應契約採購，EDUPAL
 							span.upper ® 
-							| 行動圖書館（1,000人版）已上架！組別為第16組第244項，歡迎選購！
+							| 行動圖書館（1,000人版）已上架！組別為第 16 組第 244 項，歡迎選購！
 			
 			#SECTION-01.section-even
 				.container
@@ -82,13 +83,11 @@ html lang="zh-TW"
 						.right
 							img.img src='#{assetspath}images/assets/0#{site_no}/0#{site_no}-section-01-01.jpg'
 							p.img-note #{img_note_1}
-						p 隨著科技發展的進步，資訊科技在未來的生活中已不可或缺，學生須具備基本的資訊知識和應用能力，在這知識爆炸的世代中懂得利用工具有效運用，擷取、分析資料進而獨立思考判斷，皆為資訊教育中重要的課題。
-						P 浩鑫本次參與了104年5月12日在龍門國中進行的國民中小學校長科技領導研習，主辦單位邀請到國立台北教育大學劉遠禎教授、資策會數據科技與應用研究所張文村主任、幸安國小吳宗哲校長、台灣藝術大學通識中心陳茵嵐老師以及文昌國小、大直高中、zman魔力門部落格版主梁化楠、pagamo團隊分享資訊科技推動案例及相關訊息與介紹。
+						p 台北國際電腦展是目前亞洲最大、全球第二大的資通訊展覽。今年共分智慧聯網、行動應用及雲端運算服務等3大主題館，另有4大高峰論壇，舉辦超過100場論壇及研討會，以及40場新品發表會。
+						p 浩鑫今年擴大參與，展出包含桌上型XPC、薄型(Slim)機種、XPC-PLUS、All-in-One一體機以及人臉辨識系統HR70等自有品牌為主的產品，展出多螢幕方案、數位廣告看板、KIOSK、POS應用、人臉辨識通關系統…等適合各種行業						p 應用之情境；而深耕多年的EDUPAL®智慧教育整合方案與SMARTVILLE™智慧家居解決方案也展出了各種創新應用。
 						.morecontent
-							P 文昌國小黃玉貞校長分享資訊科技融入教學案例，以認識學校的蕨類為主軸所設計的一套特色課程，結合了自然與生活科技、藝術與人文、綜合活動、語文領域，讓學生透過觀察、紀錄、討論、表演、分享等各種方式學習，在各個學習環節中利用科技工具輔助運用，例如將紀錄結果分享上傳、行動載具攝影、錄影、製作專題網頁等等，老師也自行製作輔助教材電子書，透過平台讓學生的學習成果可以互相分享和觀摩。大直高中李世文校長分享UbD(Understanding by Design)創新教學方式，以TLC大直播為例的一套教學課程，結合英文、理化、地理三個領域課程，注重理解、解決問題、溝通與協調，培養學生學習帶得走的能力。
-							P 資訊科技融入教學在教學運作過程中，大致上都會經歷探索和準備、熟悉和發展、實踐和創新這幾個歷程，學校必須具有完備的設施、教職員擁有基礎的科技領導素養、以及行政運作、教育資源與支援均能透過科技運用提升效率，各個環節層層相扣，以更有效發展共同願景，提升教師專業的發展，促進學生主動學習。
-							P 茶敘中我們也和校長們分享浩鑫產品的成果及教學應用，EDUPAL行動圖書館除了數位閱讀之外，還提供老師自製電子書上架，並且有嵌入多媒體功能可增添教材的多元性，學生在上面可以作畫線註記，老師則透過後台報表觀察學生閱讀歷程，作為記錄和分析，讓學生課前預習，課後心得分享、成果作品上傳到平台互相觀摩，是老師們在資訊融入教學的最好幫手！
-							P 浩鑫持續積極參與資訊相關研習活動，傾聽教學現場需求，以提供更好的產品應用，在行動學習的領域上不缺席！
+							p EDUPAL®智慧教育整合方案，在今年台北國際電腦展的展出重點為教室管理系統(EDUPAL® Classroom Management System)。EDUPAL®教室管理系統不僅提供教師非常便利的數位教學工具、教室管理功能，亦能提升學生數位學習成效，以及群組討論、協同合作等互動學習之能力，而今年推出的2.1升級版本，沒有指定機種的限制，不論是Android或Windows系統的平板皆可使用，p 並能同時控制50台以上平板，都讓許多參觀者眼睛為之一亮！除此之外，另展出為教師量身規劃的多媒體編輯備課解決方案，提供教師編輯圖片、聲音、影片、文字、外部連結等素材，輕鬆製作專屬的數位教材，提供學生更多元豐富的學習資源。
+							p SMARTVILLE™智慧家居解決方案除了滿足現代化智慧家庭的需求之外，更可延伸應用在校園環境，透過Z-Wave無線控制技術，無需施工佈線，校園管理者利用控制中心(Control Center)或Android手機、平板電腦遠端遙控燈光情境、空調冷氣、電動窗簾等功能，搭配網路攝影機、門窗感應器、煙霧/一氧化碳偵測器，一有異狀立刻提供警訊或啟動p 緊急錄影，全面打造安全、節能、自動化的智慧校園。
 						a.btn.btn-blue.morelink href='javascript:;' 詳全文
 			#SECTION-02.section-odd
 				.container
@@ -104,49 +103,47 @@ html lang="zh-TW"
 								td style="width: 85px"
 									b 出版社：
 								td
-									| 康軒文教事業股份有限公司
+									| 幼獅文化
 							tr
 								td
 									b 作者：
 								td
-									| 林瑋
+									| 林良
 							tr
 								td
 									b 繪者：
 								td
-									| 崔麗君
+									| 鄭明進
 							tr
 								td
 									b ISBN：
 								td
-									| 9789861517049
+									| 9789575749040
 						.morecontent
 							table
 								tr
 									td style="width: 85px"
-										b 推薦序：
+										b 簡介:
 									td
-										h4 會走路的山∕林素華 國立臺中教育大學環境教育研究所副教授兼任所長
-										br
-										p 在虎年歲末之際，回顧台灣脆弱的環境，在歷經了許多大自然反撲的衝擊下，「山林」議題是縈繞在大家心中揮之不去的巨石。因緣際會之中，在小綠芽獎優良圖畫書評審時結識林老師，這是一場兒童文學與環境教育領域融合的創作饗宴，林老師呼應了劉禹錫〈陋室銘〉「山不在高，有仙則名」的博大胸懷，著下「會走路的山」一書-由代課老師阿宗與四對親子松鼠、刺蝟、麻雀及香菇於自然課分享山林經驗的七個故事串聯而成，讓下一代有機會閱讀到更貼近觀察描述大自然的文學佳作，同時將全球暖化、防災等概念隱含其中，引導讀者能思考出在人為開發、經濟成長及環境保育之間，該如何對待「自然山林」留下美好回憶？
-										p 文中四位主人翁，皆有鮮明的刻畫，以心思細膩與好奇心重反映在對大自然的敏感度，而賞鳥與野外求生的能力正可以展現對環境的技能與行動力，在鋪陳好著急的猴子、好安靜的電塔、搬家去的老鷹、拚命逃的動物、颱風來村民跑、土石流一路倒與幸福樹養精神七組故事中，作者懷著赤子之心，以流暢的筆觸寫出自以為了解「山」的老陳、知恩圖報的阿彬、負正義感的老高、盡忠職守的阿海與退休的阿江，描繪出一幅大人對自然的互動場景。
-										p 文末，點出「美景如畫一般，始終縈繞在孩子們的夢中」與自然知識的簡介，應是可以再延伸閱讀，以「珍惜幸福．尊重生命」再出發，「看見心裡的彩虹」，將可以撫平災後受創的心靈，畢竟在嚴酷的大自然反撲中，不是每個人都像書中人物一般幸運，有機會再擁抱「幸福老樹神」！
+										p 回憶就像影片的「倒帶」，回憶使我們回到「過去」，使過去的一切，或者過去的某一件事，重新鮮活起來，而且產生了新的意義。
+										p 本書共有五篇：〈外公外公〉、〈三個外國人〉、〈南瓜糕與蘿蔔糕〉、〈水仙花開過新年〉、〈坐汽車〉。請跟著林良爺爺一起進入回憶的世界，並慢慢發掘我們的生活中有許多許多寫作的材料，等待我們去取用。
+
 								tr
 									td
-										b 簡介：
+										b 本書特色:
 									td
-										p 山上的動物和植物，有「想說卻說不出口」的話。「人要的幸福」和「山要的幸福」有什麼不同？
-										p 山上猴群有煩惱，想想當年山青水藍，美得不得了！山下空間怎樣都不夠，人群不停往上搬個沒完沒了。
-										p 山受不了想離家出走，狂風暴雨土石流全都到。樹倒了，山崩了，屋垮了，動物逃得比誰都早。
-										p 屋沒了，山沒了，樹沒了，人也搬得越遠越好。
-										p 愛山的方法千百種，共同的幸福，就看我們懂不懂得與自然擁抱。
+										ol
+											li 1.一篇篇溫暖的小故事，輔以精采插畫，使孩子能輕易理解，有助於生活應用，精進作文力。
+											li 2.生活散文深深吸引讀者一頁頁跟著故事情節一口氣讀完。
+											li 3.不一樣的「插畫」，更多元的視覺圖像嚮宴。
+
 								tr
 									td
-										b 得獎紀錄：
+										b 得獎紀錄:
 									td
 										ul
-											li 第60梯次好書大家讀
-											li 行政院新聞局第34屆中小學生優良課外讀物推介
+											li 好書大家讀入選
+											li 新聞局中小學生優良課外讀物推介
 						a.btn.btn-orange.morelink.right href='javascript:;' 詳全文
 			#SECTION-03.section-even
 				.container
@@ -155,16 +152,16 @@ html lang="zh-TW"
 						span.section__title #{nav_title_3}
 					.content
 						ul.heyper-link
-							li: a href='http://www.parenting.com.tw/article/5067471-%E7%9C%9F%E5%AF%A6%E7%9A%84%E5%AD%B8%E7%BF%92%E2%94%80%E7%95%99%E4%BD%8F%E5%AD%A9%E5%AD%90%E7%9A%84%E5%A5%BD%E5%A5%87%E5%BF%83/' target='_blank' 真實的學習─留住孩子的好奇心
-							li: a href='http://www.parenting.com.tw/article/5067491-%E3%80%8C%E8%B2%AC%E5%82%99%E3%80%8D%E6%98%AF%E7%82%BA%E4%BA%86%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E6%B1%A1%E8%BE%B1%E4%BA%BA/' target='_blank' 「責備」是為了解決問題，而不是污辱人
-							li: a href='http://flipedu.parenting.com.tw/blog-detail?id=68' target='_blank' 誰沒有作過弊?
-							li: a href='http://www.lihpao.com/?action-viewnews-itemid-119#{site_no}5' target='_blank' 打破分數的魔咒？
-							li: a href='http://etweb.tp.edu.tw/epa/paper_show.aspx?EDM=EPS20150511071558X13' target='_blank' 教育現場的「衛星導航」現象
-							li: a href='http://www.parenting.com.tw/article/5066632-%E6%96%B0%E9%AE%AE%E4%BA%8B-%E8%8A%AC%E8%98%AD%E6%95%99%E6%94%B9%EF%BC%8C%E6%8E%A8%E8%A1%8C%E3%80%8C%E4%B8%BB%E9%A1%8C%E5%BC%8F%E6%95%99%E5%AD%B8%E3%80%8D/' target='_blank' 新鮮事/芬蘭教改，推行「主題式教學」
-							li: a href='http://udn.com/news/story/6888/898336-%E5%85%AC%E7%AB%8B%E5%9C%8B%E4%B8%AD%E5%B0%8F%E6%95%99%E5%B8%AB-5%E5%B9%B4%E5%85%A7%E6%B8%9B1.3%E8%90%AC%E4%BA%BA' target='_blank' 公立國中小教師 5年內減1.3萬人
-							li: a href='http://udn.com/news/story/6888/892543-7%E5%B9%B4%E8%8A%B1%E5%8D%83%E8%90%AC-%E6%88%90%E5%A4%A7%E6%95%99%E6%8E%88%E3%80%8C%E9%80%BC%E3%80%8D%E5%AD%B8%E7%94%9F%E5%87%BA%E5%9C%8B' target='_blank' 7年花千萬 成大教授「逼」學生出國
-							li: a href='http://udn.com/news/story/7009/907115-%E7%B4%99%E4%B8%8A%E9%80%9B%E5%9C%96%E6%9B%B8%E9%A4%A8-%E9%96%B1%E8%AE%80%E6%96%B0%E6%99%AF%E9%BB%9E' target='_blank' 紙上逛圖書館 閱讀新景點
-							li: a href='https://tw.news.yahoo.com/blogs/gov-press/%E8%AE%93-%E9%AB%98%E6%96%AF-%E8%AA%AA-%E9%96%A9%E5%8D%97%E8%AA%9E-%E6%88%91%E5%80%91%E6%8A%8A%E6%95%B8%E5%AD%B8%E8%AE%8A%E5%BE%97%E4%B8%8D-032600469.html' target='_blank' 讓「高斯」說「閩南語」──我們把數學變得不一樣
+							li: a href='http://epaper.edu.tw/topical.aspx?topical_sn=874&period_num=670' target='_blank' 逾千熱血教師動起來　翻轉偏鄉從暑假開始！
+							li: a href='http://www.lihpao.com/?action-viewnews-itemid-119882' target='_blank' 數位閱讀 數位科技導入教學 66所國中小分享成果
+							li: a href='http://www.lihpao.com/?action-viewnews-itemid-119878' target='_blank' 解決偏鄉教師荒 教部規劃社群平台
+							li: a href='http://udn.com/news/story/6898/1009497' target='_blank' 小學操場當曬穀場 義賣白米做畢旅基金
+							li: a href='http://www.chinatimes.com/newspapers/20150609000754-260107' target='_blank' 到底誰比較厲害？
+							li: a href='http://udn.com/news/story/7781/1008631' target='_blank' 應該歡樂的舞蹈課卻沒了笑聲… 比舞步更重要的事
+							li: a href='http://flipedu.parenting.com.tw/information-detail?id=1542' target='_blank' 當怪獸家長找上門,該怎麼辦？
+							li: a href='http://flipedu.parenting.com.tw/information-detail?id=1532' target='_blank' 用對方法,他們教會了被放棄的孩子
+							li: a href='http://flipedu.parenting.com.tw/information-detail?id=1485' target='_blank' 加高圍牆、增加監視器,校園就安全嗎？
+							li: a href='http://udn.com/news/story/6949/1001645-%E6%95%99%E7%94%84%E8%A6%93%E5%B8%AB%EF%BC%8C%E5%A6%82%E6%AD%A4%E6%8F%AA%E5%BF%83%EF%BC%9A%E6%84%9B%E5%AD%A9%E5%AD%90%E7%9A%84%E7%9C%BC%E7%A5%9E%E9%A8%99%E4%B8%8D%E4%BA%86%E4%BA%BA%EF%BC%81' target='_blank' 教甄覓師，如此揪心：愛孩子的眼神騙不了人！
 		.footer
 			.contact
 				.container

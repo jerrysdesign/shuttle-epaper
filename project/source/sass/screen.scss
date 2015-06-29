@@ -351,6 +351,8 @@ a {
 	@include border-radius (6px);
 	@include box-shadow (0 1px 3px rgba(0,0,0,.11));
 	z-index: 0;
+	// @for $i from 1 through 3
+		// #SECTION-0#{i} & { color: $color-#{i};}
 	#SECTION-01 & { color: $color-1;}
 	#SECTION-02 & { color: $color-2;}
 	#SECTION-03 & { color: $color-3;}
@@ -385,6 +387,9 @@ a {
 	color: #fff;
 	font-size: $size-font-x-small;
 	padding: 5px;
+	#SECTION-01 & {
+		background-color: $color-1;
+	}
 	#SECTION-03 & {
 		background-color: $color-3;
 	}
