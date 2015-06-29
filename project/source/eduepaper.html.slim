@@ -1,9 +1,33 @@
+- sitetitle = 'EDUPAL: 我的學習好朋友'
+- mail = 'EDUPAL@tw.shuttle.com'
+- absolutpath = 'http://edupal.tw.shuttle.com/ebook_web/'
+- copyright = 'COPYRIGHT © 2015 SHUTTLE INC. ALL RIGHTS RESERVED'
+- assetspath = '/'
+- httpspath = '//'
+/ dev
+/ 	assetspath = ''
+/ 	assetspath = 'https://'
+
+// content
+-site_no					= '38'
+-this_date				= 'July, 2015'
+-nav_title_1			= '活動報導'
+-heading_title_1 	= '活動報導 台北市103學年度國民中小學校長科技領導研習'
+-img_note_1				= ''
+-nav_title_2			= '好書報報'
+-heading_title_2	= '會走路的山'
+-img_note_2				= ''
+-nav_title_3			= '教育一點靈'
+-heading_title_3	= ''
+-img_note_3				= ''
+
+
 doctype html
 html lang="zh-TW"
 	head
 		meta charset="utf-8"
-		title EDUPAL: 我的學習好朋友
 		meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"
+		title #{sitetitle}
 		meta content= data["site-title"] property="og:title"
 		meta content= data["site-name"] property="og:site_name"
 		meta content= data["site-url"] property="og:url"
@@ -25,15 +49,15 @@ html lang="zh-TW"
 						.shuttle-logo-wrapper
 							.shuttle-logo SHUTTLE
 						.logo-groups
-							a.email href='mailto:EDUPAL@tw.shuttle.com' EDUPAL@tw.shuttle.com
+							a.email href='mailto:#{mail}' #{mail}
 							a.edupal-logo href='http://edupal.tw.shuttle.com/ebook_web/?md=tw&cl=index&at=index' EDUPAL
 			.nav-wrapper
 				.container
-					h3.no 第 038 期
+					h3.no 第 #{site_no} 期
 					ul.nav
-						li.nav-list.item-01: a href='#SECTION-01' 活動報導
-						li.nav-list.item-02: a href='#SECTION-02' 好書報報
-						li.nav-list.item-03: a href='#SECTION-03' 教育一點靈
+						li.nav-list.item-01: a href='#SECTION-01' #{nav_title_1}
+						li.nav-list.item-02: a href='#SECTION-02' #{nav_title_2}
+						li.nav-list.item-03: a href='#SECTION-03' #{nav_title_3}
 
 		.content
 			#SECTION-00.section-odd
@@ -52,12 +76,12 @@ html lang="zh-TW"
 				.container
 					h1.section-title
 						span.section__title-icon
-						span.section__title 活動報導
-					h2.heading 活動報導 台北市103學年度國民中小學校長科技領導研習
+						span.section__title #{nav_title_1}
+					h2.heading #{heading_title_1}
 					.content
 						.right
-							img.img src='images/assets/038/038-section-01-01.jpg'
-							p.img-note 台北市103學年度國民中小學校長科技領導研習
+							img.img src='#{assetspath}images/assets/0#{site_no}/0#{site_no}-section-01-01.jpg'
+							p.img-note #{img_note_1}
 						p 隨著科技發展的進步，資訊科技在未來的生活中已不可或缺，學生須具備基本的資訊知識和應用能力，在這知識爆炸的世代中懂得利用工具有效運用，擷取、分析資料進而獨立思考判斷，皆為資訊教育中重要的課題。
 						P 浩鑫本次參與了104年5月12日在龍門國中進行的國民中小學校長科技領導研習，主辦單位邀請到國立台北教育大學劉遠禎教授、資策會數據科技與應用研究所張文村主任、幸安國小吳宗哲校長、台灣藝術大學通識中心陳茵嵐老師以及文昌國小、大直高中、zman魔力門部落格版主梁化楠、pagamo團隊分享資訊科技推動案例及相關訊息與介紹。
 						.morecontent
@@ -70,11 +94,11 @@ html lang="zh-TW"
 				.container
 					h1.section-title
 						span.section__title-icon
-						span.section__title 好書報報
-					h2.heading 會走路的山
+						span.section__title #{nav_title_2}
+					h2.heading #{heading_title_2}
 					.content
 						.left
-							img.img src='images/assets/038/038-section-02-01.jpg' alt='會走路的山'
+							img.img src='#{assetspath}images/assets/0#{site_no}/0#{site_no}-section-02-01.jpg' alt='會走路的山'
 						table
 							tr
 								td style="width: 85px"
@@ -128,13 +152,13 @@ html lang="zh-TW"
 				.container
 					h1.section-title
 						span.section__title-icon
-						span.section__title 教育一點靈
+						span.section__title #{nav_title_3}
 					.content
 						ul.heyper-link
 							li: a href='http://www.parenting.com.tw/article/5067471-%E7%9C%9F%E5%AF%A6%E7%9A%84%E5%AD%B8%E7%BF%92%E2%94%80%E7%95%99%E4%BD%8F%E5%AD%A9%E5%AD%90%E7%9A%84%E5%A5%BD%E5%A5%87%E5%BF%83/' target='_blank' 真實的學習─留住孩子的好奇心
 							li: a href='http://www.parenting.com.tw/article/5067491-%E3%80%8C%E8%B2%AC%E5%82%99%E3%80%8D%E6%98%AF%E7%82%BA%E4%BA%86%E8%A7%A3%E6%B1%BA%E5%95%8F%E9%A1%8C%EF%BC%8C%E8%80%8C%E4%B8%8D%E6%98%AF%E6%B1%A1%E8%BE%B1%E4%BA%BA/' target='_blank' 「責備」是為了解決問題，而不是污辱人
 							li: a href='http://flipedu.parenting.com.tw/blog-detail?id=68' target='_blank' 誰沒有作過弊?
-							li: a href='http://www.lihpao.com/?action-viewnews-itemid-119385' target='_blank' 打破分數的魔咒？
+							li: a href='http://www.lihpao.com/?action-viewnews-itemid-119#{site_no}5' target='_blank' 打破分數的魔咒？
 							li: a href='http://etweb.tp.edu.tw/epa/paper_show.aspx?EDM=EPS20150511071558X13' target='_blank' 教育現場的「衛星導航」現象
 							li: a href='http://www.parenting.com.tw/article/5066632-%E6%96%B0%E9%AE%AE%E4%BA%8B-%E8%8A%AC%E8%98%AD%E6%95%99%E6%94%B9%EF%BC%8C%E6%8E%A8%E8%A1%8C%E3%80%8C%E4%B8%BB%E9%A1%8C%E5%BC%8F%E6%95%99%E5%AD%B8%E3%80%8D/' target='_blank' 新鮮事/芬蘭教改，推行「主題式教學」
 							li: a href='http://udn.com/news/story/6888/898336-%E5%85%AC%E7%AB%8B%E5%9C%8B%E4%B8%AD%E5%B0%8F%E6%95%99%E5%B8%AB-5%E5%B9%B4%E5%85%A7%E6%B8%9B1.3%E8%90%AC%E4%BA%BA' target='_blank' 公立國中小教師 5年內減1.3萬人
@@ -150,13 +174,13 @@ html lang="zh-TW"
 			.under-bar
 				.container
 					ul.list-nav
-						li.list-item COPYRIGHT © 2015 SHUTTLE INC. ALL RIGHTS RESERVED
+						li.list-item #{copyright}
 						li.list-item: a href='mailto:EDUPAL@tw.shuttle.com' CONTACT US
-						li.list-item June, 2015
-						li.list-item 第 038 期
+						li.list-item #{this_date}
+						li.list-item 第 #{site_no} 期
 		== javascript_include_tag \
-		"//ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"
-		script type='text/javascript' src='./javascripts/all.js'
+		"#{httpspath}ajax.googleapis.com/ajax/libs/jquery/1.10.1/jquery.min.js"
+		script type='text/javascript' src='#{assetspath}javascripts/all.js'
 		javascript:
 			(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
 			(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
