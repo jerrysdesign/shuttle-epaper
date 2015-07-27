@@ -124,6 +124,9 @@ a {
 		}
 	}
 }
+.break-word {
+	word-wrap: break-word;
+}
 .section-title {
 	font-size: $size-font-xx-large;
 	height: $section-icon-size;
